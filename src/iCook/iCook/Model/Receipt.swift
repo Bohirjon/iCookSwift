@@ -8,8 +8,12 @@
 import Foundation
 
 struct Receipt : Codable {
-    let id, calories: Int
-    let carbs, fat: String
+    let id:Int
+    let calories: Int
+    let carbs: String
+    let fat: String
     let image: String
-    let imageType, protein, title: String
+    let imageType: String
+    let protein: String
+    let title: String
 }

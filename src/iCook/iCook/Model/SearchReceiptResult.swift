@@ -9,6 +9,6 @@ import Foundation
 
 struct SearchReceiptResult : Codable{
     let offset, number: Int
-    let results: [Receipt]
     let totalResults: Int
+    let results: [Receipt]
 }
