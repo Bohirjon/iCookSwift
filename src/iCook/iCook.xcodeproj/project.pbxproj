@@ -17,6 +17,7 @@
 		06285DAF25ADB9820090E8D7 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DAE25ADB9820090E8D7 /* Receipt.swift */; };
 		06285DB425ADBA870090E8D7 /* SearchReceiptResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DB325ADBA870090E8D7 /* SearchReceiptResult.swift */; };
 		06285DBA25ADBB320090E8D7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DB925ADBB320090E8D7 /* AppConstants.swift */; };
+		06285DC725ADC4810090E8D7 /* SearchReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DC625ADC4810090E8D7 /* SearchReceiptViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		06285DAE25ADB9820090E8D7 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 		06285DB325ADBA870090E8D7 /* SearchReceiptResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReceiptResult.swift; sourceTree = "<group>"; };
 		06285DB925ADBB320090E8D7 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		06285DC625ADC4810090E8D7 /* SearchReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReceiptViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +105,11 @@
 		06285D7825ADB6710090E8D7 /* iCook */ = {
 			isa = PBXGroup;
 			children = (
+				06285DC225ADC45E0090E8D7 /* Views */,
+				06285DC125ADC4520090E8D7 /* ViewModels */,
 				06285DAD25ADB94E0090E8D7 /* Model */,
 				06285DA725ADB8B60090E8D7 /* ServiceApis */,
 				06285D7925ADB6710090E8D7 /* iCookApp.swift */,
-				06285D7B25ADB6710090E8D7 /* ContentView.swift */,
 				06285D7D25ADB6710090E8D7 /* Assets.xcassets */,
 				06285D8225ADB6710090E8D7 /* Info.plist */,
 				06285D7F25ADB6710090E8D7 /* Preview Content */,
@@ -156,6 +159,22 @@
 				06285DB325ADBA870090E8D7 /* SearchReceiptResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		06285DC125ADC4520090E8D7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				06285DC625ADC4810090E8D7 /* SearchReceiptViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		06285DC225ADC45E0090E8D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06285D7B25ADB6710090E8D7 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06285DC725ADC4810090E8D7 /* SearchReceiptViewModel.swift in Sources */,
 				06285DAF25ADB9820090E8D7 /* Receipt.swift in Sources */,
 				06285DBA25ADBB320090E8D7 /* AppConstants.swift in Sources */,
 				06285D7C25ADB6710090E8D7 /* ContentView.swift in Sources */,
