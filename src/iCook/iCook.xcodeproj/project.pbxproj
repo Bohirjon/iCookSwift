@@ -13,6 +13,10 @@
 		06285D8125ADB6710090E8D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06285D8025ADB6710090E8D7 /* Preview Assets.xcassets */; };
 		06285D8C25ADB6710090E8D7 /* iCookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285D8B25ADB6710090E8D7 /* iCookTests.swift */; };
 		06285D9725ADB6720090E8D7 /* iCookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285D9625ADB6720090E8D7 /* iCookUITests.swift */; };
+		06285DA925ADB9010090E8D7 /* SearchReceiptApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DA825ADB9010090E8D7 /* SearchReceiptApi.swift */; };
+		06285DAF25ADB9820090E8D7 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DAE25ADB9820090E8D7 /* Receipt.swift */; };
+		06285DB425ADBA870090E8D7 /* SearchReceiptResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DB325ADBA870090E8D7 /* SearchReceiptResult.swift */; };
+		06285DBA25ADBB320090E8D7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DB925ADBB320090E8D7 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		06285D9225ADB6720090E8D7 /* iCookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06285D9625ADB6720090E8D7 /* iCookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCookUITests.swift; sourceTree = "<group>"; };
 		06285D9825ADB6720090E8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06285DA825ADB9010090E8D7 /* SearchReceiptApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReceiptApi.swift; sourceTree = "<group>"; };
+		06285DAE25ADB9820090E8D7 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		06285DB325ADBA870090E8D7 /* SearchReceiptResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReceiptResult.swift; sourceTree = "<group>"; };
+		06285DB925ADBB320090E8D7 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +103,14 @@
 		06285D7825ADB6710090E8D7 /* iCook */ = {
 			isa = PBXGroup;
 			children = (
+				06285DAD25ADB94E0090E8D7 /* Model */,
+				06285DA725ADB8B60090E8D7 /* ServiceApis */,
 				06285D7925ADB6710090E8D7 /* iCookApp.swift */,
 				06285D7B25ADB6710090E8D7 /* ContentView.swift */,
 				06285D7D25ADB6710090E8D7 /* Assets.xcassets */,
 				06285D8225ADB6710090E8D7 /* Info.plist */,
 				06285D7F25ADB6710090E8D7 /* Preview Content */,
+				06285DB925ADBB320090E8D7 /* AppConstants.swift */,
 			);
 			path = iCook;
 			sourceTree = "<group>";
@@ -128,6 +139,23 @@
 				06285D9825ADB6720090E8D7 /* Info.plist */,
 			);
 			path = iCookUITests;
+			sourceTree = "<group>";
+		};
+		06285DA725ADB8B60090E8D7 /* ServiceApis */ = {
+			isa = PBXGroup;
+			children = (
+				06285DA825ADB9010090E8D7 /* SearchReceiptApi.swift */,
+			);
+			path = ServiceApis;
+			sourceTree = "<group>";
+		};
+		06285DAD25ADB94E0090E8D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				06285DAE25ADB9820090E8D7 /* Receipt.swift */,
+				06285DB325ADBA870090E8D7 /* SearchReceiptResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06285DAF25ADB9820090E8D7 /* Receipt.swift in Sources */,
+				06285DBA25ADBB320090E8D7 /* AppConstants.swift in Sources */,
 				06285D7C25ADB6710090E8D7 /* ContentView.swift in Sources */,
 				06285D7A25ADB6710090E8D7 /* iCookApp.swift in Sources */,
+				06285DB425ADBA870090E8D7 /* SearchReceiptResult.swift in Sources */,
+				06285DA925ADB9010090E8D7 /* SearchReceiptApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
