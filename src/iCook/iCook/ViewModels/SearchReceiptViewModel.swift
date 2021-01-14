@@ -14,14 +14,13 @@ class SearchReceiptViewModel: ObservableObject {
     @Published var searchReceiptResult: SearchReceiptResult? = nil
     @Published var searchKey: String = ""
     
-    
     init(searchReceiptApi: SearchReceiptApiProtocol) {
         self.searchReceiptApi = searchReceiptApi
         self.searchReceiptApi.searchReceiptApiDelegate = self
     }
     
     func search()  {
-        searchReceiptApi .search(queryKey: searchKey, number: 20)
+        searchReceiptApi.search(queryKey: searchKey, number: 20)
     }
 }
 
