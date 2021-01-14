@@ -11,7 +11,7 @@ import SwiftUI
 struct iCookApp: App {
     var body: some Scene {
         WindowGroup {
-//            SearchReceiptView()
+            SearchReceiptView(viewModel: SearchReceiptViewModel(searchReceiptApi: SearchReceiptApi()))
         }
     }
 }

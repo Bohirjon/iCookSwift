@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import SDWebImageSwiftUI
 
 struct Model : Hashable {
     let title :String
@@ -24,47 +25,58 @@ struct SearchReceiptView: View {
         NavigationView {
             VStack {
                 HStack {
-                    TextField("Search...", text: $searhKey, onCommit: {
+                    TextField("Search...", text: $viewModel.searchKey, onCommit: {
                         print("todo: ViewModel search")
                     }).textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button(action: {
-                        print("todo: ViewModel search")
+                        viewModel.search()
                     }, label: {
                         Image(systemName: "location.viewfinder")
                     })
+
                 }
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(.flexible()),
-                                        GridItem(.flexible()),
-                                        GridItem(.flexible())
-                    ],spacing: 12, content: {
-                        
-                        if viewModel.searchReceiptResult != nil {
+                if viewModel.searchReceiptResult != nil {
+                    
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.flexible()),
+                                            GridItem(.flexible()),
+                                            GridItem(.flexible())
+                        ],spacing: 12, content: {
+                            
+                            
                             ForEach(viewModel.searchReceiptResult!.results, id: \.self) { result  in
                                 NavigationLink(
                                     destination: Text("ReceiptDetailView"),
                                     label: {
-                                        Image(result.image)
+                                        WebImage(url: URL(string: result.image))
+                                            .onSuccess(perform: { (image) in
+                                                print("downloaded image")
+                                            })
                                             .resizable()
+                                            .indicator(.activity)
+                                            .transition(.fade(duration: 0.5))
                                             .aspectRatio(contentMode: .fill)
+                                            
                                             .shadow(radius:1)
                                             .cornerRadius(5.0)
                                             .overlay(RoundedRectangle(cornerRadius: 7.0)
                                                         .stroke(Color.black.opacity(0.4)))
                                     })
                             }
-                        } else {
-                            VStack(alignment:.trailing) {
-                                Text("Search for a receipt")
-                                Spacer()
-                            }
-                            .background(Color.red)
-                        }
-                        
-                    })
+                            
+                            
+                        })
+                    }
+                    .padding(.vertical, 5)
+                } else {
+                    VStack(alignment:.trailing) {
+                        Text("Search for a receipt")
+                            .foregroundColor(Color.black.opacity(0.7))
+                            .font(.caption)
+                        Spacer()
+                    }
                 }
-                .padding(.vertical, 5)
             }
             .padding(.horizontal, 5)
             .navigationBarTitle("Search receipts", displayMode: .large)

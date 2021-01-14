@@ -9,11 +9,6 @@ import Foundation
 
 struct Receipt : Codable, Hashable {
     let id:Int
-    let calories: Int
-    let carbs: String
-    let fat: String
     let image: String
-    let imageType: String
-    let protein: String
     let title: String
 }
