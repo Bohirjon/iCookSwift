@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct Model : Hashable {
     let title :String
@@ -14,6 +15,7 @@ struct Model : Hashable {
 
 struct SearchReceiptView: View {
     @State private var searhKey = ""
+    @ObservedObject var viewModel:SearchReceiptViewModel
     let items:[Model] = (1...19).map {   index  in
         Model(title: "image\(index)", imageName: "This is a title \(index)")
     }
@@ -37,19 +39,29 @@ struct SearchReceiptView: View {
                                         GridItem(.flexible()),
                                         GridItem(.flexible())
                     ],spacing: 12, content: {
-                        ForEach(items, id: \.self) { item in
-                            NavigationLink(
-                                destination: Text("ReceiptDetailView"),
-                                label: {
-                                    Image(item.title)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .shadow(radius:1)
-                                        .cornerRadius(5.0)
-                                        .overlay(RoundedRectangle(cornerRadius: 7.0)
-                                                    .stroke(Color.black.opacity(0.4)))
-                                })
+                        
+                        if viewModel.searchReceiptResult != nil {
+                            ForEach(viewModel.searchReceiptResult!.results, id: \.self) { result  in
+                                NavigationLink(
+                                    destination: Text("ReceiptDetailView"),
+                                    label: {
+                                        Image(result.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .shadow(radius:1)
+                                            .cornerRadius(5.0)
+                                            .overlay(RoundedRectangle(cornerRadius: 7.0)
+                                                        .stroke(Color.black.opacity(0.4)))
+                                    })
+                            }
+                        } else {
+                            VStack(alignment:.trailing) {
+                                Text("Search for a receipt")
+                                Spacer()
+                            }
+                            .background(Color.red)
                         }
+                        
                     })
                 }
                 .padding(.vertical, 5)
@@ -67,6 +79,6 @@ struct SearchReceiptView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchReceiptView()
+        SearchReceiptView(viewModel: SearchReceiptViewModel(searchReceiptApi: SearchReceiptApi()))
     }
 }

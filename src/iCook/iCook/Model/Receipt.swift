@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Receipt : Codable {
+struct Receipt : Codable, Hashable {
     let id:Int
     let calories: Int
     let carbs: String

@@ -1,0 +1,6 @@
+framework module Pods_iCook_iCookUITests {
+  umbrella header "Pods-iCook-iCookUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

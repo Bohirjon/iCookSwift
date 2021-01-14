@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class SearchReceiptViewModel: ObservableObject {
-    private let searchReceiptApi: SearchReceiptApiProtocol
+    var searchReceiptApi: SearchReceiptApiProtocol
     
     @Published var searchReceiptResult: SearchReceiptResult? = nil
     @Published var searchKey: String?
@@ -17,6 +17,7 @@ class SearchReceiptViewModel: ObservableObject {
     
     init(searchReceiptApi: SearchReceiptApiProtocol) {
         self.searchReceiptApi = searchReceiptApi
+        self.searchReceiptApi.searchReceiptApiDelegate = self
     }
     
     func search(queryKey: String)  {

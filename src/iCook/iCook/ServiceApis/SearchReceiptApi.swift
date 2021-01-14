@@ -14,16 +14,12 @@ protocol SearchReceiptApiDelegate {
 }
 
 protocol SearchReceiptApiProtocol {
-    var searchReceiptApiDelegate: SearchReceiptApiDelegate! { get }
+    var searchReceiptApiDelegate: SearchReceiptApiDelegate? { get set }
     func search(queryKey: String, number: Int)
 }
 
 class SearchReceiptApi: SearchReceiptApiProtocol {
-    let searchReceiptApiDelegate: SearchReceiptApiDelegate!
-    
-    init(searchReceiptApiDelegate: SearchReceiptApiDelegate) {
-        self.searchReceiptApiDelegate = searchReceiptApiDelegate
-    }
+    var searchReceiptApiDelegate: SearchReceiptApiDelegate?
     
     func search(queryKey: String, number: Int) {
         let urlString = "\(AppConstract.ReceiptServiceEndPoint)?query=\(queryKey)&number=\(number.description)"
