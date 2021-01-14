@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06285D7A25ADB6710090E8D7 /* iCookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285D7925ADB6710090E8D7 /* iCookApp.swift */; };
-		06285D7C25ADB6710090E8D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285D7B25ADB6710090E8D7 /* ContentView.swift */; };
+		06285D7C25ADB6710090E8D7 /* SearchReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285D7B25ADB6710090E8D7 /* SearchReceiptView.swift */; };
 		06285D7E25ADB6710090E8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06285D7D25ADB6710090E8D7 /* Assets.xcassets */; };
 		06285D8125ADB6710090E8D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06285D8025ADB6710090E8D7 /* Preview Assets.xcassets */; };
 		06285D8C25ADB6710090E8D7 /* iCookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285D8B25ADB6710090E8D7 /* iCookTests.swift */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		06285D7625ADB6710090E8D7 /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06285D7925ADB6710090E8D7 /* iCookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCookApp.swift; sourceTree = "<group>"; };
-		06285D7B25ADB6710090E8D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		06285D7B25ADB6710090E8D7 /* SearchReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReceiptView.swift; sourceTree = "<group>"; };
 		06285D7D25ADB6710090E8D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06285D8025ADB6710090E8D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		06285D8225ADB6710090E8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 		06285DC225ADC45E0090E8D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				06285D7B25ADB6710090E8D7 /* ContentView.swift */,
+				06285D7B25ADB6710090E8D7 /* SearchReceiptView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,7 +309,7 @@
 				06285DC725ADC4810090E8D7 /* SearchReceiptViewModel.swift in Sources */,
 				06285DAF25ADB9820090E8D7 /* Receipt.swift in Sources */,
 				06285DBA25ADBB320090E8D7 /* AppConstants.swift in Sources */,
-				06285D7C25ADB6710090E8D7 /* ContentView.swift in Sources */,
+				06285D7C25ADB6710090E8D7 /* SearchReceiptView.swift in Sources */,
 				06285D7A25ADB6710090E8D7 /* iCookApp.swift in Sources */,
 				06285DB425ADBA870090E8D7 /* SearchReceiptResult.swift in Sources */,
 				06285DA925ADB9010090E8D7 /* SearchReceiptApi.swift in Sources */,
