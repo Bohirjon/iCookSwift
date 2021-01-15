@@ -20,7 +20,7 @@ class SearchReceiptViewModel: ObservableObject {
     }
     
     func search()  {
-        searchReceiptApi.search(queryKey: searchKey, number: 20)
+        searchReceiptApi.search(queryKey: searchKey, number: 100)
     }
 }
 

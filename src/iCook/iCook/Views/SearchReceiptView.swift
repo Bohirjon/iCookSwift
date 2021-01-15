@@ -26,7 +26,7 @@ struct SearchReceiptView: View {
             VStack {
                 HStack {
                     TextField("Search...", text: $viewModel.searchKey, onCommit: {
-                        print("todo: ViewModel search")
+                        viewModel.search()
                     }).textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     Button(action: {
@@ -34,7 +34,7 @@ struct SearchReceiptView: View {
                     }, label: {
                         Image(systemName: "location.viewfinder")
                     })
-
+                    
                 }
                 if viewModel.searchReceiptResult != nil {
                     
@@ -51,13 +51,13 @@ struct SearchReceiptView: View {
                                     label: {
                                         WebImage(url: URL(string: result.image))
                                             .onSuccess(perform: { (image) in
-                                                print("downloaded image")
+                                                let index = viewModel.searchReceiptResult!.results.firstIndex(of: result)
+                                                print(index!)
                                             })
                                             .resizable()
                                             .indicator(.activity)
                                             .transition(.fade(duration: 0.5))
                                             .aspectRatio(contentMode: .fill)
-                                            
                                             .shadow(radius:1)
                                             .cornerRadius(5.0)
                                             .overlay(RoundedRectangle(cornerRadius: 7.0)
