@@ -21,7 +21,6 @@ struct ReceiptInformation: Codable {
     let id: Int
     let title: String
     let readyInMinutes, servings: Int
-    let sourceURL: String
     let image: String
     let imageType, summary: String
     let cuisines, dishTypes, diets: [String]
@@ -29,7 +28,6 @@ struct ReceiptInformation: Codable {
     let instructions: String
     let analyzedInstructions: [AnalyzedInstruction]
     let extendedIngredients: [ExtendedIngredient]
-    let spoonacularSourceURL: String
 }
 
 // MARK: - AnalyzedInstruction
@@ -85,24 +83,4 @@ struct Metric: Codable {
 struct WinePairing: Codable {
     let pairedWines: [String]
     let pairingText: String
-    let productMatches: [ProductMatch]
-}
-
-// MARK: - ProductMatch
-struct ProductMatch: Codable {
-    let id: Int
-    let title, productMatchDescription, price: String
-    let imageURL: String
-    let averageRating: Double
-    let ratingCount: Int
-    let score: Double
-    let link: String
-
-    enum CodingKeys: String, CodingKey {
-        case id, title
-        case productMatchDescription
-        case price
-        case imageURL
-        case averageRating, ratingCount, score, link
-    }
 }

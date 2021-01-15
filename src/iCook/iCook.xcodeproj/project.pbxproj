@@ -20,6 +20,11 @@
 		06285DC725ADC4810090E8D7 /* SearchReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DC625ADC4810090E8D7 /* SearchReceiptViewModel.swift */; };
 		0697CD7E25B15960008E0221 /* ReceiptDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CD7D25B15960008E0221 /* ReceiptDetailView.swift */; };
 		0697CD8525B15C50008E0221 /* ReceiptInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CD8425B15C50008E0221 /* ReceiptInformation.swift */; };
+		0697CD8A25B17EFC008E0221 /* ReceiptDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CD8925B17EFC008E0221 /* ReceiptDetailViewModel.swift */; };
+		0697CD8F25B17F27008E0221 /* ReceiptDetailApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CD8E25B17F27008E0221 /* ReceiptDetailApi.swift */; };
+		0697CD9525B19C07008E0221 /* ReceiptDetailOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CD9425B19C07008E0221 /* ReceiptDetailOverviewView.swift */; };
+		0697CDA025B19F60008E0221 /* ReceiptDetailIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CD9F25B19F60008E0221 /* ReceiptDetailIngredientsView.swift */; };
+		0697CDAB25B19FE8008E0221 /* ReceiptDetailStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CDAA25B19FE8008E0221 /* ReceiptDetailStepsView.swift */; };
 		66319CE36506330392B30DE8 /* Pods_iCookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771018D431D13B0CEF23656D /* Pods_iCookTests.framework */; };
 		DA2C41A63CF7D2ED544D2A9E /* Pods_iCook_iCookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E66A2605D465709C96116E8 /* Pods_iCook_iCookUITests.framework */; };
 		F0575D4186A012125E6F3005 /* Pods_iCook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BC0EC7FFE1405360EE693 /* Pods_iCook.framework */; };
@@ -63,6 +68,11 @@
 		06285DC625ADC4810090E8D7 /* SearchReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReceiptViewModel.swift; sourceTree = "<group>"; };
 		0697CD7D25B15960008E0221 /* ReceiptDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailView.swift; sourceTree = "<group>"; };
 		0697CD8425B15C50008E0221 /* ReceiptInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptInformation.swift; sourceTree = "<group>"; };
+		0697CD8925B17EFC008E0221 /* ReceiptDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailViewModel.swift; sourceTree = "<group>"; };
+		0697CD8E25B17F27008E0221 /* ReceiptDetailApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailApi.swift; sourceTree = "<group>"; };
+		0697CD9425B19C07008E0221 /* ReceiptDetailOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailOverviewView.swift; sourceTree = "<group>"; };
+		0697CD9F25B19F60008E0221 /* ReceiptDetailIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailIngredientsView.swift; sourceTree = "<group>"; };
+		0697CDAA25B19FE8008E0221 /* ReceiptDetailStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailStepsView.swift; sourceTree = "<group>"; };
 		0708697656D9BA4E15A0E1A9 /* Pods-iCook-iCookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook-iCookUITests.release.xcconfig"; path = "Target Support Files/Pods-iCook-iCookUITests/Pods-iCook-iCookUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3FF122B4D270F89A65BE50DE /* Pods-iCook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCook.debug.xcconfig"; path = "Target Support Files/Pods-iCook/Pods-iCook.debug.xcconfig"; sourceTree = "<group>"; };
 		6E66A2605D465709C96116E8 /* Pods_iCook_iCookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCook_iCookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				06285DA825ADB9010090E8D7 /* SearchReceiptApi.swift */,
+				0697CD8E25B17F27008E0221 /* ReceiptDetailApi.swift */,
 			);
 			path = ServiceApis;
 			sourceTree = "<group>";
@@ -186,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				06285DC625ADC4810090E8D7 /* SearchReceiptViewModel.swift */,
+				0697CD8925B17EFC008E0221 /* ReceiptDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,8 +205,8 @@
 		06285DC225ADC45E0090E8D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0697CD9325B19BDF008E0221 /* ReceiptDetailViews */,
 				06285D7B25ADB6710090E8D7 /* SearchReceiptView.swift */,
-				0697CD7D25B15960008E0221 /* ReceiptDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +226,17 @@
 				0697CD8425B15C50008E0221 /* ReceiptInformation.swift */,
 			);
 			path = ReceiptDetail;
+			sourceTree = "<group>";
+		};
+		0697CD9325B19BDF008E0221 /* ReceiptDetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				0697CD7D25B15960008E0221 /* ReceiptDetailView.swift */,
+				0697CD9425B19C07008E0221 /* ReceiptDetailOverviewView.swift */,
+				0697CD9F25B19F60008E0221 /* ReceiptDetailIngredientsView.swift */,
+				0697CDAA25B19FE8008E0221 /* ReceiptDetailStepsView.swift */,
+			);
+			path = ReceiptDetailViews;
 			sourceTree = "<group>";
 		};
 		57D25D3C2A0E0AD7A568FAE7 /* Frameworks */ = {
@@ -476,13 +499,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0697CDAB25B19FE8008E0221 /* ReceiptDetailStepsView.swift in Sources */,
 				06285DC725ADC4810090E8D7 /* SearchReceiptViewModel.swift in Sources */,
 				06285DAF25ADB9820090E8D7 /* Receipt.swift in Sources */,
 				06285DBA25ADBB320090E8D7 /* AppConstants.swift in Sources */,
+				0697CD9525B19C07008E0221 /* ReceiptDetailOverviewView.swift in Sources */,
 				06285D7C25ADB6710090E8D7 /* SearchReceiptView.swift in Sources */,
+				0697CD8A25B17EFC008E0221 /* ReceiptDetailViewModel.swift in Sources */,
 				0697CD8525B15C50008E0221 /* ReceiptInformation.swift in Sources */,
 				0697CD7E25B15960008E0221 /* ReceiptDetailView.swift in Sources */,
+				0697CD8F25B17F27008E0221 /* ReceiptDetailApi.swift in Sources */,
 				06285D7A25ADB6710090E8D7 /* iCookApp.swift in Sources */,
+				0697CDA025B19F60008E0221 /* ReceiptDetailIngredientsView.swift in Sources */,
 				06285DB425ADBA870090E8D7 /* SearchReceiptResult.swift in Sources */,
 				06285DA925ADB9010090E8D7 /* SearchReceiptApi.swift in Sources */,
 			);

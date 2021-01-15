@@ -47,7 +47,7 @@ struct SearchReceiptView: View {
                             
                             ForEach(viewModel.searchReceiptResult!.results, id: \.self) { result  in
                                 NavigationLink(
-                                    destination: Text("ReceiptDetailView"),
+                                    destination:ReceiptDetailView(receipt: result),
                                     label: {
                                         WebImage(url: URL(string: result.image))
                                             .onSuccess(perform: { (image) in
@@ -88,7 +88,7 @@ struct SearchReceiptView: View {
             .navigationBarItems(trailing: Button(action: {
                 //TODO: navigate to the filters view
             }, label: {
-                Text("Filters")
+                Text("Filter")
             }))
         }
     }
