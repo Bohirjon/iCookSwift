@@ -20,6 +20,8 @@ protocol SearchReceiptApiProtocol {
 
 class SearchReceiptApi: SearchReceiptApiProtocol {
     var searchReceiptApiDelegate: SearchReceiptApiDelegate?
+    let jsonDecoder  = JSONDecoder()
+    
     
     func search(queryKey: String, number: Int) {
         let urlString = "\(AppConstract.ReceiptServiceEndPoint)complexSearch?apiKey=\(AppConstract.ApiKey)&query=\(queryKey)&number=\(number.description)"
@@ -28,23 +30,30 @@ class SearchReceiptApi: SearchReceiptApiProtocol {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let safeError = error {
                     self.searchReceiptApiDelegate?.onSearchFailed(error: safeError)
-                    print(safeError)
                     return
-                } else {
-                    let jsonDecoder = JSONDecoder()
-                    do {
-                        let searchReceiptResult  = try jsonDecoder.decode(SearchReceiptResult.self, from: data!)
-                        self.searchReceiptApiDelegate?.onSearchFinish(searchReceiptResult: searchReceiptResult)
-                    } catch let decodeError {
-                        print(decodeError)
-                        self.searchReceiptApiDelegate?.onSearchFailed(error: decodeError)
-                    }
                 }
+                
+                if let safeResult = self.parseJson(data: data!) {
+                    self.searchReceiptApiDelegate?.onSearchFinish(searchReceiptResult: safeResult)
+                } else {
+                    self.searchReceiptApiDelegate?.onSearchFailed(error: SearchReceiptError(message: "Could not decode the json!", queryKey: queryKey))
+                }
+                
             }.resume()
             
         } else {
             print("bad url: = \(urlString)")
             self.searchReceiptApiDelegate?.onSearchFailed(error: URLError.init(.badURL))
+        }
+    }
+    
+    func parseJson(data: Data) -> SearchReceiptResult? {
+        do {
+            let result = try jsonDecoder.decode(SearchReceiptResult.self, from: data)
+            return result
+        } catch let error {
+            print(error)
+            return nil
         }
     }
 }
