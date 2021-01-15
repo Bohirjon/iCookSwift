@@ -71,9 +71,14 @@ struct SearchReceiptView: View {
                     .padding(.vertical, 5)
                 } else {
                     VStack(alignment:.trailing) {
-                        Text("Search for a receipt")
-                            .foregroundColor(Color.black.opacity(0.7))
-                            .font(.caption)
+                        if viewModel.isLoading {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                        } else {
+                            Text("Search for a receipt")
+                                .foregroundColor(Color.black.opacity(0.7))
+                                .font(.caption)
+                        }
                         Spacer()
                     }
                 }

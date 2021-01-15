@@ -13,6 +13,7 @@ class SearchReceiptViewModel: ObservableObject {
     
     @Published var searchReceiptResult: SearchReceiptResult? = nil
     @Published var searchKey: String = ""
+    @Published var isLoading: Bool = false
     
     init(searchReceiptApi: SearchReceiptApiProtocol) {
         self.searchReceiptApi = searchReceiptApi
@@ -20,18 +21,32 @@ class SearchReceiptViewModel: ObservableObject {
     }
     
     func search()  {
+        startLoading()
         searchReceiptApi.search(queryKey: searchKey, number: 100)
     }
 }
 
 extension SearchReceiptViewModel : SearchReceiptApiDelegate {
+    
     func onSearchFinish(searchReceiptResult: SearchReceiptResult) {
         DispatchQueue.main.async {
             self.searchReceiptResult = searchReceiptResult
+            self.stopLoading()
         }
     }
     
     func onSearchFailed(error: Error) {
-        print(error)
+        DispatchQueue.main.async {
+            self.stopLoading()
+        }
+    }
+}
+
+extension SearchReceiptViewModel {
+    func startLoading()  {
+        isLoading = true
+    }
+    func stopLoading() {
+        isLoading = false
     }
 }
