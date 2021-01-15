@@ -26,10 +26,14 @@ class SearchReceiptApi: SearchReceiptApiProtocol {
         if let url = URL(string: urlString) {
             
             URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let safeData = data  {
+                if let safeError = error {
+                    self.searchReceiptApiDelegate?.onSearchFailed(error: safeError)
+                    print(safeError)
+                    return
+                } else {
                     let jsonDecoder = JSONDecoder()
                     do {
-                        let searchReceiptResult  = try jsonDecoder.decode(SearchReceiptResult.self, from: safeData)
+                        let searchReceiptResult  = try jsonDecoder.decode(SearchReceiptResult.self, from: data!)
                         self.searchReceiptApiDelegate?.onSearchFinish(searchReceiptResult: searchReceiptResult)
                     } catch let decodeError {
                         print(decodeError)

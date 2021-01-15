@@ -11,7 +11,7 @@ import SwiftUI
 struct iCookApp: App {
     var body: some Scene {
         WindowGroup {
-            ReceiptDetailView(receipt: Receipt(id: 656329, image: "", title: "Pizza bites with pumpkin"))
+            SearchReceiptView(viewModel: SearchReceiptViewModel(searchReceiptApi: SearchReceiptApi()))
         }
     }
 }
