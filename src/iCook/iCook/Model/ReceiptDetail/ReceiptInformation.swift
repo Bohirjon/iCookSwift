@@ -1,10 +1,3 @@
-//
-//  ReceiptInformation.swift
-//  iCook
-//
-//  Created by Bohirjon Akhmedov on 15/01/21.
-//
-
 
 import Foundation
 
@@ -24,10 +17,12 @@ struct ReceiptInformation: Codable {
     let image: String
     let imageType, summary: String
     let cuisines, dishTypes, diets: [String]
-    let winePairing: WinePairing
     let instructions: String
+    
     let analyzedInstructions: [AnalyzedInstruction]
     let extendedIngredients: [ExtendedIngredient]
+    //    let winePairing: WinePairing
+    //    let spoonacularSourceURL: String
 }
 
 // MARK: - AnalyzedInstruction
@@ -79,8 +74,22 @@ struct Metric: Codable {
     let unitShort, unitLong: String
 }
 
-// MARK: - WinePairing
-struct WinePairing: Codable {
-    let pairedWines: [String]
-    let pairingText: String
-}
+//// MARK: - WinePairing
+//struct WinePairing: Codable {
+//    let pairedWines: [String]
+//    let pairingText: String
+//    let productMatches: [ProductMatch]
+//}
+//
+//// MARK: - ProductMatch
+//struct ProductMatch: Codable {
+//    let id: Int
+//    let title, price: String
+//    let productMatchDescription : String!
+//
+//    let imageURL: String
+//    let averageRating: Double
+//    let ratingCount: Int
+//    let score: Double
+//    let link: String
+//}

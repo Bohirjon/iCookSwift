@@ -13,7 +13,7 @@ struct ReceiptDetailView: View {
     @ObservedObject var viewModel: ReceiptDetailViewModel
     
     init(receipt:Receipt) {
-        viewModel = ReceiptDetailViewModel(receiptDetailApi: ReceipDetialApi(), receiptId: receipt.id)
+        viewModel = ReceiptDetailViewModel(receiptDetailApi: MockReceiptDetailApi(), receiptId: receipt.id)
         self.receipt = receipt
     }
     
@@ -36,7 +36,7 @@ struct ReceiptDetailView: View {
                         Text("Steps")
                     }
             }
-            .navigationBarTitle(receipt.title, displayMode: .large)
+            .navigationBarTitle(receipt.title, displayMode: .inline)
         }
         .onAppear(perform:viewModel.fetchReceiptInformation)
         .environmentObject(viewModel)

@@ -23,11 +23,30 @@ struct ReceiptDetailOverviewView: View {
                     .indicator(.activity)
                     .transition(.fade(duration: 0.5))
                     .aspectRatio(contentMode: .fit)
-                    .shadow(radius:1)
-                    .cornerRadius(5.0)
-                    .overlay(RoundedRectangle(cornerRadius: 7.0)
-                                .stroke(Color.black.opacity(0.4)))
-                Text(viewModel.receiptInformation!.summary)
+                    .shadow(radius:3)
+                    .cornerRadius(12.0)
+                    .overlay(RoundedRectangle(cornerRadius: 12.0)
+                                .stroke(Color.black.opacity(0.5)))
+                    .padding()
+                Text(viewModel.receiptInformation!.title)
+                Form {
+                    HStack {
+                        Image(systemName: "timer")
+                        Text("Ready in \(viewModel.receiptInformation!.readyInMinutes) minutes")
+                    }
+                    HStack {
+                        Image(systemName: "flame")
+                        Text("\(viewModel.receiptInformation!.healthScore) Calories")
+                    }
+                    HStack {
+                        Image(systemName: "hand.thumbsup")
+                        Text("\(viewModel.receiptInformation!.aggregateLikes) Likes")
+                    }
+                    HStack {
+                        Image(systemName: "star")
+                        Text("\(viewModel.receiptInformation!.spoonacularScore) Score from spooncular")
+                    }
+                }
                 Spacer()
             }
         }
