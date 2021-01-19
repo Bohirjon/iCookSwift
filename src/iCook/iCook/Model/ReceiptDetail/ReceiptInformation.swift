@@ -53,7 +53,7 @@ struct Length: Codable {
 }
 
 // MARK: - ExtendedIngredient
-struct ExtendedIngredient: Codable {
+struct ExtendedIngredient: Codable, Identifiable {
     let id: Int
     let aisle, image, consistency, name: String
     let original, originalString, originalName: String

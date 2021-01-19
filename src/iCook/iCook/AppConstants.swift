@@ -11,4 +11,6 @@ struct AppConstract {
     //https://api.spoonacular.com/recipes/complexSearch?apiKey=c7ad216edccf4068bd299e2a2b6520bd&query=pasta&number=20
     static let ReceiptServiceEndPoint = "https://api.spoonacular.com/recipes/"
     static let ApiKey = "c7ad216edccf4068bd299e2a2b6520bd"
+    
+    static let IngredientImageUrl = "https://spoonacular.com/cdn/ingredients_100x100/"
 }
