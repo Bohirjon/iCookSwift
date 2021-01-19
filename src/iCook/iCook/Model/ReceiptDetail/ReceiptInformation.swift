@@ -32,7 +32,11 @@ struct AnalyzedInstruction: Codable {
 }
 
 // MARK: - Step
-struct Step: Codable {
+struct Step: Codable, Identifiable {
+    var id:  UUID  {
+        UUID()
+    }
+    
     let number: Int
     let step: String
     let ingredients, equipment: [Ent]

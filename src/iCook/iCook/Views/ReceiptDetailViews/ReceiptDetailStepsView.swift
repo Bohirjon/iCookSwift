@@ -13,6 +13,23 @@ struct ReceiptDetailStepsView: View {
     @EnvironmentObject var viewModel: ReceiptDetailViewModel
     
     var body: some View {
-        Text("Steps")
+        if viewModel.receiptInformation == nil {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle())
+        } else {
+            List(viewModel.receiptInformation!.analyzedInstructions[0].steps) { step in
+                Text(step.step)
+            }
+        }
+    }
+}
+
+
+struct ReceiptDetailStepsView_Previews: PreviewProvider {
+    static let viewModel = ReceiptDetailViewModel(receiptDetailApi: ReceipDetialApi(), receiptId: 656329)
+    
+    static var previews: some View {
+        return ReceiptDetailStepsView()
+            .environmentObject(viewModel)
     }
 }
