@@ -44,16 +44,11 @@ struct SearchReceiptView: View {
                                             GridItem(.flexible())
                         ],spacing: 12, content: {
                             
-                            
                             ForEach(viewModel.searchReceiptResult!.results, id: \.self) { result  in
                                 NavigationLink(
                                     destination:ReceiptDetailView(receipt: result),
                                     label: {
                                         WebImage(url: URL(string: result.image))
-                                            .onSuccess(perform: { (image) in
-                                                let index = viewModel.searchReceiptResult!.results.firstIndex(of: result)
-                                                print(index!)
-                                            })
                                             .resizable()
                                             .indicator(.activity)
                                             .transition(.fade(duration: 0.5))
@@ -64,7 +59,6 @@ struct SearchReceiptView: View {
                                                         .stroke(Color.black.opacity(0.4)))
                                     })
                             }
-                            
                             
                         })
                     }

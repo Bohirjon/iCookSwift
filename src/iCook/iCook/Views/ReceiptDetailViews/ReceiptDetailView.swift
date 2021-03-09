@@ -18,25 +18,24 @@ struct ReceiptDetailView: View {
     }
     
     var body: some View {
-        NavigationView {
-            TabView {
-                ReceiptDetailOverviewView()
-                    .tabItem {
-                        Image(systemName: "book.fill")
-                        Text("Overview")
-                    }
+        TabView {
+            ReceiptDetailOverviewView()
+                .tabItem {
+                    Label("Overview", systemImage: "book.fill")
+                }
+            NavigationView(){
                 ReceiptDetailIngredientsView()
-                    .tabItem {
-                        Image(systemName: "cart.fill")
-                        Text("Ingredients")
-                    }
-                ReceiptDetailStepsView()
-                    .tabItem {
-                        Image(systemName: "dial.max")
-                        Text("Steps")
-                    }
             }
-            .navigationBarTitle(receipt.title, displayMode: .inline)
+            .tabItem {
+                Label("Ingredients", systemImage: "cart.fill")
+            }
+            NavigationView() {
+                ReceiptDetailStepsView()
+            }
+            .tabItem {
+                Label("Steps",systemImage: "dial.max")
+            }
+            
         }
         .onAppear(perform:viewModel.fetchReceiptInformation)
         .environmentObject(viewModel)

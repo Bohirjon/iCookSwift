@@ -16,17 +16,17 @@ struct ReceiptDetailIngredientsView : View {
     
     var body: some View {
         if viewModel.receiptInformation == nil {
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle())
+            ActivityIndicator(.constant(true))
         } else {
             List(viewModel.receiptInformation!.extendedIngredients) { ingredient in
                 HStack {
+                    
                     WebImage(url: URL(string: "\(AppConstract.IngredientImageUrl)\(ingredient.image)"))
                         .resizable()
-                        .placeholder {
-                            ActivityIndicator(.constant(true))
-                        }
-                        .frame(width: 40, height: 40, alignment: .leading)
+                        .indicator(.activity)
+                        .aspectRatio(contentMode: .fit) 
+                        .transition(.fade(duration: 0.5))
+                        .frame(width: 40, height: 40)
                     
                     Text("\(ingredient.originalString)")
                 }
@@ -34,7 +34,6 @@ struct ReceiptDetailIngredientsView : View {
         }
     }
 }
-
 
 struct ReceiptDetailIngredientsView_Previews: PreviewProvider {
     static let viewModel = ReceiptDetailViewModel(receiptDetailApi: ReceipDetialApi(), receiptId: 656329)

@@ -17,11 +17,23 @@ struct ReceiptDetailStepsView: View {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle())
         } else {
+            list
+        }
+    }
+    @ViewBuilder
+    var list : some View {
+        if viewModel.receiptInformation == nil {
+            Text("Receiption information is nill")
+        } else if (viewModel.receiptInformation!.analyzedInstructions.count > 0) {
             List(viewModel.receiptInformation!.analyzedInstructions[0].steps) { step in
                 Text(step.step)
             }
         }
+        else {
+            Text("collection is empty")
+        }
     }
+    
 }
 
 
