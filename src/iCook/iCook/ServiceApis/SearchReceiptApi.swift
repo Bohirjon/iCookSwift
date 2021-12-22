@@ -26,7 +26,7 @@ class SearchReceiptApi: SearchReceiptApiProtocol {
     func search(queryKey: String, number: Int) {
         let urlString = "\(AppConstract.ReceiptServiceEndPoint)complexSearch?apiKey=\(AppConstract.ApiKey)&query=\(queryKey)&number=\(number.description)"
         if let url = URL(string: urlString) {
-            
+
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let safeError = error {
                     self.searchReceiptApiDelegate?.onSearchFailed(error: safeError)

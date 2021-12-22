@@ -24,39 +24,21 @@ struct SearchReceiptView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    TextField("Search...", text: $viewModel.searchKey, onCommit: {
-                        viewModel.search()
-                    }).textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                    Button(action: {
-                        viewModel.search()
-                    }, label: {
-                        Image(systemName: "location.viewfinder")
-                    })
-                    
-                }
+                TextField("Search...", text: $viewModel.searchKey, onCommit: {
+                    viewModel.search()
+                }).textFieldStyle(RoundedBorderTextFieldStyle())
                 if viewModel.searchReceiptResult != nil {
                     
                     ScrollView {
                         LazyVGrid(columns: [GridItem(.flexible()),
-                                            GridItem(.flexible()),
                                             GridItem(.flexible())
-                        ],spacing: 12, content: {
+                        ],spacing: 10, content: {
                             
                             ForEach(viewModel.searchReceiptResult!.results, id: \.self) { result  in
                                 NavigationLink(
                                     destination:ReceiptDetailView(receipt: result),
                                     label: {
-                                        WebImage(url: URL(string: result.image))
-                                            .resizable()
-                                            .indicator(.activity)
-                                            .transition(.fade(duration: 0.5))
-                                            .aspectRatio(contentMode: .fill)
-                                            .shadow(radius:1)
-                                            .cornerRadius(5.0)
-                                            .overlay(RoundedRectangle(cornerRadius: 7.0)
-                                                        .stroke(Color.black.opacity(0.4)))
+                                        ReceiptResultCell(reciept: result)
                                     })
                             }
                             
@@ -68,17 +50,13 @@ struct SearchReceiptView: View {
                         if viewModel.isLoading {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle())
-                        } else {
-                            Text("Search for a receipt")
-                                .foregroundColor(Color.black.opacity(0.7))
-                                .font(.caption)
                         }
                         Spacer()
                     }
                 }
             }
             .padding(.horizontal, 5)
-            .navigationBarTitle("Search receipts", displayMode: .large)
+            .navigationBarTitle("Search receipts", displayMode: .automatic)
             .navigationBarItems(trailing: Button(action: {
                 //TODO: navigate to the filters view
             }, label: {
@@ -89,7 +67,16 @@ struct SearchReceiptView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let viewModel = SearchReceiptViewModel(searchReceiptApi: SearchReceiptApi())
+    
+    
     static var previews: some View {
-        SearchReceiptView(viewModel: SearchReceiptViewModel(searchReceiptApi: SearchReceiptApi()))
+        SearchReceiptView(viewModel: getViewModel())
+    }
+    
+    static func getViewModel() -> SearchReceiptViewModel {
+        viewModel.searchKey = "Pizza"
+        viewModel.search()
+        return viewModel
     }
 }

@@ -26,7 +26,12 @@ struct ReceiptDetailStepsView: View {
             Text("Receiption information is nill")
         } else if (viewModel.receiptInformation!.analyzedInstructions.count > 0) {
             List(viewModel.receiptInformation!.analyzedInstructions[0].steps) { step in
-                Text(step.step)
+                GeometryReader { geo in
+                        HStack {
+                            Text(String(step.number))
+                            Text(step.step)
+                        }
+                }
             }
         }
         else {
@@ -38,10 +43,13 @@ struct ReceiptDetailStepsView: View {
 
 
 struct ReceiptDetailStepsView_Previews: PreviewProvider {
-    static let viewModel = ReceiptDetailViewModel(receiptDetailApi: ReceipDetialApi(), receiptId: 656329)
+    static let viewModel = ReceiptDetailViewModel(receiptDetailApi: MockReceiptDetailApi(), receiptId: 656329)
     
     static var previews: some View {
         return ReceiptDetailStepsView()
             .environmentObject(viewModel)
+            .onAppear(perform: {
+                viewModel.fetchReceiptInformation()
+            })
     }
 }

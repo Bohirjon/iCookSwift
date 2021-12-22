@@ -18,6 +18,7 @@
 		06285DB425ADBA870090E8D7 /* SearchReceiptResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DB325ADBA870090E8D7 /* SearchReceiptResult.swift */; };
 		06285DBA25ADBB320090E8D7 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DB925ADBB320090E8D7 /* AppConstants.swift */; };
 		06285DC725ADC4810090E8D7 /* SearchReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285DC625ADC4810090E8D7 /* SearchReceiptViewModel.swift */; };
+		06762EC526E2324700C7EAD9 /* ReceiptResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06762EC426E2324700C7EAD9 /* ReceiptResultCell.swift */; };
 		0697CD7E25B15960008E0221 /* ReceiptDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CD7D25B15960008E0221 /* ReceiptDetailView.swift */; };
 		0697CD8525B15C50008E0221 /* ReceiptInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CD8425B15C50008E0221 /* ReceiptInformation.swift */; };
 		0697CD8A25B17EFC008E0221 /* ReceiptDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0697CD8925B17EFC008E0221 /* ReceiptDetailViewModel.swift */; };
@@ -71,6 +72,7 @@
 		06285DB325ADBA870090E8D7 /* SearchReceiptResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReceiptResult.swift; sourceTree = "<group>"; };
 		06285DB925ADBB320090E8D7 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		06285DC625ADC4810090E8D7 /* SearchReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchReceiptViewModel.swift; sourceTree = "<group>"; };
+		06762EC426E2324700C7EAD9 /* ReceiptResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptResultCell.swift; sourceTree = "<group>"; };
 		0697CD7D25B15960008E0221 /* ReceiptDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailView.swift; sourceTree = "<group>"; };
 		0697CD8425B15C50008E0221 /* ReceiptInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptInformation.swift; sourceTree = "<group>"; };
 		0697CD8925B17EFC008E0221 /* ReceiptDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailViewModel.swift; sourceTree = "<group>"; };
@@ -217,10 +219,19 @@
 		06285DC225ADC45E0090E8D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				06762EC326E2322600C7EAD9 /* Cells */,
 				0697CD9325B19BDF008E0221 /* ReceiptDetailViews */,
 				06285D7B25ADB6710090E8D7 /* SearchReceiptView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		06762EC326E2322600C7EAD9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				06762EC426E2324700C7EAD9 /* ReceiptResultCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		0697CD8225B15C1A008E0221 /* SearchReceipt */ = {
@@ -533,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0697CDAB25B19FE8008E0221 /* ReceiptDetailStepsView.swift in Sources */,
+				06762EC526E2324700C7EAD9 /* ReceiptResultCell.swift in Sources */,
 				06285DC725ADC4810090E8D7 /* SearchReceiptViewModel.swift in Sources */,
 				06285DAF25ADB9820090E8D7 /* Receipt.swift in Sources */,
 				06ED5D3A25B58C9900C4DCEF /* MockReceipDetailApi.swift in Sources */,
